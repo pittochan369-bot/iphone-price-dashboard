@@ -21,10 +21,6 @@
 
       <section class="controls" aria-label="表示条件">
         <div class="segmented" id="modelTabs" role="tablist" aria-label="機種"></div>
-        <div class="segmented compact" id="metricTabs" role="tablist" aria-label="グラフ指標">
-          <button type="button" class="active" data-metric="buyback">買取価格</button>
-          <button type="button" data-metric="profit">差益</button>
-        </div>
       </section>
 
       <section class="summary" id="summaryCards" aria-label="最新サマリー"></section>
@@ -36,6 +32,10 @@
             <h2 id="chartTitle">買取価格</h2>
           </div>
           <div class="legend" id="legend"></div>
+        </div>
+        <div class="segmented compact chartMetricTabs" id="metricTabs" role="tablist" aria-label="グラフ指標">
+          <button type="button" class="active" data-metric="buyback">買取価格</button>
+          <button type="button" data-metric="profit">差益</button>
         </div>
         <div class="chartWrap">
           <svg id="priceChart" role="img" aria-label="価格推移グラフ"></svg>

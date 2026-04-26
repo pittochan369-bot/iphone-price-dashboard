@@ -129,6 +129,11 @@ h2 {
   color: #fff;
 }
 
+.chartMetricTabs {
+  width: min(360px, 100%);
+  margin-top: 14px;
+}
+
 .summary {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -275,10 +280,13 @@ tbody tr:hover {
 
 @media (max-width: 860px) {
   .topbar,
-  .controls,
   .panelHead {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .controls {
+    display: block;
   }
 
   .status {
@@ -338,7 +346,6 @@ tbody tr:hover {
   }
 
   .controls {
-    gap: 10px;
     margin-bottom: 12px;
   }
 
@@ -402,6 +409,10 @@ tbody tr:hover {
   .tablePanel {
     margin-top: 12px;
     padding: 12px;
+  }
+
+  .chartMetricTabs {
+    margin-top: 10px;
   }
 
   .legend {
