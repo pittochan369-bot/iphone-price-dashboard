@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iPhone 17 買取価格ダッシュボード</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="kicker">買取一丁目 / Apple公式</p>
+          <h1>iPhone 17 価格差益</h1>
+        </div>
+        <div class="status">
+          <span id="sourceStatus">読み込み中</span>
+          <strong id="latestDate">--</strong>
+        </div>
+      </header>
+
+      <section class="controls" aria-label="表示条件">
+        <div class="segmented" id="modelTabs" role="tablist" aria-label="機種"></div>
+        <div class="segmented compact" id="metricTabs" role="tablist" aria-label="グラフ指標">
+          <button type="button" class="active" data-metric="buyback">買取価格</button>
+          <button type="button" data-metric="profit">差益</button>
+        </div>
+      </section>
+
+      <section class="summary" id="summaryCards" aria-label="最新サマリー"></section>
+
+      <section class="chartPanel">
+        <div class="panelHead">
+          <div>
+            <p class="kicker">推移</p>
+            <h2 id="chartTitle">買取価格</h2>
+          </div>
+          <div class="legend" id="legend"></div>
+        </div>
+        <div class="chartWrap">
+          <svg id="priceChart" role="img" aria-label="価格推移グラフ"></svg>
+        </div>
+      </section>
+
+      <section class="tablePanel">
+        <div class="panelHead">
+          <div>
+            <p class="kicker">容量別</p>
+            <h2>買取価格・購入価格・差益</h2>
+          </div>
+        </div>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>機種</th>
+                <th>容量</th>
+                <th>最新日</th>
+                <th>買取価格</th>
+                <th>購入価格</th>
+                <th>差益</th>
+                <th>最大値</th>
+              </tr>
+            </thead>
+            <tbody id="priceRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
