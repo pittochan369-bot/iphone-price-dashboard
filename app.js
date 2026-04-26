@@ -205,7 +205,6 @@ function renderSummary(skus) {
     const latest = latestPoint(sku);
     const max = maxPoint(sku);
     const profitClass = latest.profit >= 0 ? "positive" : "negative";
-    const maxProfitClass = max.profit >= 0 ? "positive" : "negative";
 
     return `
       <article class="card">
@@ -215,7 +214,6 @@ function renderSummary(skus) {
           <dt>購入価格</dt><dd>${sku.official ? yen.format(sku.official) : "--"}</dd>
           <dt>差益</dt><dd class="${profitClass}">${latest.profit === null ? "--" : yen.format(latest.profit)}</dd>
           <dt>最大値</dt><dd><span class="valueLine">${yen.format(max.buyback)}<small>${shortDate.format(max.date)}</small></span></dd>
-          <dt>最大値差益</dt><dd class="${maxProfitClass}">${max.profit === null ? "--" : yen.format(max.profit)}</dd>
         </dl>
       </article>
     `;
@@ -228,7 +226,6 @@ function renderTable(skus) {
     const latest = latestPoint(sku);
     const max = maxPoint(sku);
     const profitClass = latest.profit >= 0 ? "positive" : "negative";
-    const maxProfitClass = max.profit >= 0 ? "positive" : "negative";
 
     return `
       <tr>
@@ -239,7 +236,6 @@ function renderTable(skus) {
         <td data-label="購入価格">${sku.official ? yen.format(sku.official) : "--"}</td>
         <td data-label="差益" class="${profitClass}">${latest.profit === null ? "--" : yen.format(latest.profit)}</td>
         <td data-label="最大値"><span class="valueLine">${yen.format(max.buyback)}<small>${shortDate.format(max.date)}</small></span></td>
-        <td data-label="最大値差益" class="${maxProfitClass}">${max.profit === null ? "--" : yen.format(max.profit)}</td>
       </tr>
     `;
   }).join("");
