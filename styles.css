@@ -74,10 +74,7 @@ h2 {
 
 .status {
   min-width: 170px;
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.78);
+  padding: 0;
   text-align: right;
 }
 
@@ -88,12 +85,13 @@ h2 {
 
 .status span {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 700;
 }
 
 .status strong {
-  margin-top: 3px;
-  font-size: 18px;
+  margin-top: 2px;
+  font-size: 15px;
 }
 
 .controls {
@@ -245,7 +243,7 @@ h2 {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 760px;
+  min-width: 860px;
 }
 
 th,
@@ -337,7 +335,6 @@ tbody tr:hover {
 
   .status {
     min-width: 0;
-    padding: 10px 12px;
   }
 
   .controls {
@@ -366,17 +363,39 @@ tbody tr:hover {
   }
 
   .summary {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
     margin-bottom: 12px;
   }
 
   .card {
-    padding: 14px 16px;
+    padding: 10px;
+  }
+
+  .card h3 {
+    margin-bottom: 8px;
+    font-size: 14px;
   }
 
   .card dl {
-    gap: 9px 14px;
+    gap: 6px 8px;
+  }
+
+  .card dt {
+    font-size: 11px;
+  }
+
+  .card dd {
+    font-size: 13px;
+  }
+
+  .valueLine {
+    flex-wrap: wrap;
+    gap: 2px 5px;
+  }
+
+  .valueLine small {
+    font-size: 10px;
   }
 
   .chartPanel,
@@ -409,7 +428,8 @@ tbody tr:hover {
 
   tbody {
     display: grid;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 
   tr {
@@ -421,11 +441,12 @@ tbody tr:hover {
 
   td {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 14px;
-    padding: 10px 12px;
+    gap: 8px;
+    padding: 7px 9px;
     border-bottom: 1px solid var(--line);
+    font-size: 12px;
     text-align: right;
     white-space: normal;
   }
@@ -444,8 +465,19 @@ tbody tr:hover {
     content: attr(data-label);
     flex: 0 0 auto;
     color: var(--muted);
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 750;
     text-align: left;
+  }
+}
+
+@media (max-width: 380px) {
+  .shell {
+    width: min(100% - 14px, 1180px);
+  }
+
+  .card dd,
+  td {
+    font-size: 11px;
   }
 }
